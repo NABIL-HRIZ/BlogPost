@@ -1,4 +1,5 @@
 import AboutSection from "./componants/AboutSection"
+import Footer from "./componants/Footer"
 import HeroSection from "./componants/HeroSection"
 import MyNavbar from "./componants/Navbar"
 
@@ -9,6 +10,7 @@ const App = () => {
     <MyNavbar />
      <HeroSection />
      <AboutSection />
+     <Footer />
     </>
   )
 }

@@ -7,7 +7,7 @@ import '../styles/Navbar.css'
 
 const MyNavbar = () => {
   return (
-   <Navbar expand="lg" className="navbar bg-body-tertiary">
+   <Navbar expand="lg" className="navbar bg-body-tertiary" sticky='top'>
   <Container className='container'>
     <Navbar.Brand href="#home">
       <img src={blogIcon} alt="Logo" style={{ width: "100px" }} />
