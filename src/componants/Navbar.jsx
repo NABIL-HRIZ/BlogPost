@@ -2,24 +2,37 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import  blogIcon from "../assets/blog-logo.png";
+import '../styles/Navbar.css'
 
 const MyNavbar = () => {
   return (
-   <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home"><img src={blogIcon} alt="" className='w-25' /></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Accueil</Nav.Link>
-            <Nav.Link href="#link">Publier un article</Nav.Link>
-            
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+   <Navbar expand="lg" className="navbar bg-body-tertiary">
+  <Container className='container'>
+    <Navbar.Brand href="#home">
+      <img src={blogIcon} alt="Logo" style={{ width: "100px" }} />
+    </Navbar.Brand>
+    
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+    <Navbar.Collapse id="basic-navbar-nav">
+      <div className="navbar-links">
+        <Nav className="me-auto d-flex align-items-center">
+          <Nav.Link href="#home">Accueil</Nav.Link>
+          <Nav.Link href="#articles">Toutes les articles</Nav.Link>
+          <Nav.Link href="#add">Publier un article</Nav.Link>
+        </Nav>
+
+        <ul className="wrapper">
+          <li className="icon facebook"><span className="tooltip">Facebook</span><i className="fab fa-facebook-f"></i></li>
+          <li className="icon twitter"><span className="tooltip">Twitter</span><i className="fab fa-twitter"></i></li>
+          <li className="icon instagram"><span className="tooltip">Instagram</span><i className="fab fa-instagram"></i></li>
+        </ul>
+      </div>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+
   )
 }
 

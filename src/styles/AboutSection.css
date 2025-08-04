@@ -1,0 +1,20 @@
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow:0 20px 40px rgba(0, 0, 0, 0.15);;
+}
+
+.card-header-custom {
+  border: none;
+  padding:20px;
+}
+
+.card-title-custom {
+  color:rgb(159, 159, 220);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.h2{
+    font-size:40px !important;
+    font-weight:bold;
+}
