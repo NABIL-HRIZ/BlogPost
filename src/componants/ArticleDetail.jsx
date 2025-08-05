@@ -37,38 +37,32 @@ const ArticleDetail = () => {
   <h1 className="title">Détails de l'article</h1>
 
   <div className="post-card">
-    <strong className="post-title">{article.title}</strong>
-    <p className="post-body">{article.body}</p>
+    <strong className="post-title">Titre : {article.title}</strong>
+    <p className="post-body"><strong>Description :</strong> {article.body}</p>
 
-    {/* Affiche les tags s'ils existent */}
+   
     <div style={{ marginTop: '10px' }}>
       <strong>Tags:</strong>{" "}
-      {Array.isArray(article.tags) &&
-        article.tags.map((tag, index) => (
+      
+        {article.tags.map((tag, index) => (
           <span key={index} style={{
             padding: '4px 8px',
             marginRight: '6px',
             backgroundColor: '#e0e0e0',
             borderRadius: '5px',
-            fontSize: '0.9em'
+            fontSize: '15px'
           }}>
             {tag}
           </span>
         ))}
     </div>
 
-    {/* Affiche les réactions si elles existent */}
-    {article.reactions && (
+   
       <div style={{ marginTop: '10px' }}>
         <p><strong>👍 Likes:</strong> {article.reactions.likes}</p>
         <p><strong>👎 Dislikes:</strong> {article.reactions.dislikes}</p>
       </div>
-    )}
-
-    {/* Vue, si elle existe */}
-    {article.views && (
       <p><strong>👁️ Vues:</strong> {article.views}</p>
-    )}
   </div>
 </div>
 

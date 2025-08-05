@@ -9,7 +9,7 @@ const MyNavbar = () => {
   return (
    <Navbar expand="lg" className="navbar bg-body-tertiary" sticky='top'>
   <Container className='container'>
-    <Navbar.Brand href="#home">
+    <Navbar.Brand href="/">
       <img src={blogIcon} alt="Logo" style={{ width: "100px" }} />
     </Navbar.Brand>
     
