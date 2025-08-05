@@ -2,7 +2,7 @@ import '../styles/AboutSection.css'
 const AboutSection = () => {
   return (
     <div className="fade-in p-5">
-      <h2 className="h2 mb-4" style={{color:"rgb(128, 128, 196)"}}>ℹ️ À propos de BlogPost</h2>
+      <h2 className="h2 mb-4" style={{color:"rgb(128, 128, 196)"}}> <i className="fa-solid fa-exclamation"></i>  À propos de BlogPost</h2>
 
       <div className="row g-4">
         <div className="col-lg-8">

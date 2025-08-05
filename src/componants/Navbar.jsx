@@ -18,9 +18,9 @@ const MyNavbar = () => {
     <Navbar.Collapse id="basic-navbar-nav">
       <div className="navbar-links">
         <Nav className="me-auto d-flex align-items-center">
-          <Nav.Link href="#home">Accueil</Nav.Link>
-          <Nav.Link href="#articles">Toutes les articles</Nav.Link>
-          <Nav.Link href="#add">Publier un article</Nav.Link>
+          <Nav.Link href="/">Accueil</Nav.Link>
+          <Nav.Link href="/articles">Toutes les articles</Nav.Link>
+          <Nav.Link href="/publierArticle">Publier un article</Nav.Link>
         </Nav>
 
         <ul className="wrapper">
