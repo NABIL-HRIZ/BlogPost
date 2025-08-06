@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import  blogIcon from "../assets/blog-logo.png";
+import  blogIcon from "../assets/myLogo.png";
 import '../styles/Navbar.css'
 
 const MyNavbar = () => {

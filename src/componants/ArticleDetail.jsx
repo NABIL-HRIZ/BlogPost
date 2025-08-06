@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; 
+import '../styles/ArticleDetail.css'
+import { Link } from 'react-router-dom';
 
 const ArticleDetail = () => {
   const { id } = useParams(); 
   const [article, setArticle] = useState(null);
+  const [loading,setLoading]=useState(true)
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -16,56 +19,69 @@ const ArticleDetail = () => {
 
         const combined = [...localArticles, ...apiPosts];
 
-        // Find the article by id (convert id to number)
+       
         const foundArticle = combined.find((item) => item.id === parseInt(id));
 
         setArticle(foundArticle);
       } catch (error) {
         console.error("can't upload data", error);
-      }
+      }finally {
+        
+        setTimeout(() => {
+          setLoading(false);
+        },50);
+      
+    };
     };
 
     fetchArticle();
   }, [id]);
 
-  if (!article) {
-    return <div className="container">Article introuvable...</div>;
-  }
+ if (loading) {
+  return (
+    <div className='loading'>
+      <h1>En cours de chargement...</h1>
+      <div className="loader"></div>
+    </div>
+  );
+}
 
   return (
-   <div className="container">
-  <h1 className="title">Détails de l'article</h1>
+   <div className="article-detail">
+     <Link to="/" className="back-link">
+        <i className="fa-solid fa-arrow-left"></i> Retour à l'accueil
+     </Link>
+     
+     <h1 className="page-title">Détails de l'article</h1>
 
-  <div className="post-card">
-    <strong className="post-title">Titre : {article.title}</strong>
-    <p className="post-body"><strong>Description :</strong> {article.body}</p>
-
-   
-    <div style={{ marginTop: '10px' }}>
-      <strong>Tags:</strong>{" "}
-      
-        {article.tags.map((tag, index) => (
-          <span key={index} style={{
-            padding: '4px 8px',
-            marginRight: '6px',
-            backgroundColor: '#e0e0e0',
-            borderRadius: '5px',
-            fontSize: '15px'
-          }}>
-            {tag}
-          </span>
-        ))}
-    </div>
-
-   
-      <div style={{ marginTop: '10px' }}>
-        <p><strong>👍 Likes:</strong> {article.reactions.likes}</p>
-        <p><strong>👎 Dislikes:</strong> {article.reactions.dislikes}</p>
-      </div>
-      <p><strong>👁️ Vues:</strong> {article.views}</p>
-  </div>
-</div>
-
+     <div className="article-card">
+        <h2 className="article-title">{article.title}</h2>
+        <p className="article-body">{article.body}</p>
+        
+        <div className="tags-container">
+          {article.tags.map((tag, index) => (
+            <span key={index} className="tag">
+              #{tag}
+            </span>
+          ))}
+        </div>
+        
+        <div className="reactions-container">
+          <div className="reaction">
+            <span className="reaction-icon">👍</span>
+            <span>{article.reactions.likes}</span>
+          </div>
+          <div className="reaction">
+            <span className="reaction-icon">👎</span>
+            <span>{article.reactions.dislikes}</span>
+          </div>
+          <div className="reaction">
+            <span className="reaction-icon">👁️</span>
+            <span>{article.views} vues</span>
+          </div>
+        </div>
+     </div>
+   </div>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import '../styles/AjouterArticle.css'
+import { Link } from 'react-router-dom';
 const AjouterArticle = () => {
 
     const [title,setTitle]=useState('')
@@ -28,16 +29,15 @@ const AjouterArticle = () => {
 
         })
         const data = await response.json()
-        // Force overwrite the fields (in case the API returns them empty)
-    const finalArticle = {
-      ...data,
+
+        const finalArticle = {
+        ...data,
       title,
       body,
     };
          const stored = JSON.parse(localStorage.getItem('articles')) || [];
-  stored.unshift(finalArticle); // ajoute en premier
+  stored.unshift(finalArticle);
   localStorage.setItem('articles', JSON.stringify(stored));
-        console.log('Données envoyées:', fi)
         alert('Article bien ajouté')
         setTitle('')
         setBody('')
@@ -52,7 +52,11 @@ const AjouterArticle = () => {
 
 
   return (
+    
     <div className="form-section">
+       <Link to="/" className="back-link">
+              <i className="fa-solid fa-arrow-left"></i> Retour à l'accueil
+           </Link>
   <h2 className="form-title mb-4">Publier un Article</h2>
   <Form onSubmit={handleSubmit}>
     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

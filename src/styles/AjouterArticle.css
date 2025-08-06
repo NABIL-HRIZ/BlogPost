@@ -1,3 +1,17 @@
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4a6cf7;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 25px;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #2e4acd;
+}
 .form-section {
     max-width: 800px;
     margin:20px auto;
@@ -9,8 +23,8 @@
 }
 
 .form-title {
-    font-size: 2.2rem;
-    color: #4a6cf7;
+    font-size:2.5rem;
+    color: #8b95be;
     text-align: center;
     margin-bottom: 30px !important;
     font-weight: 700;
