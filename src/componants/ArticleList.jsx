@@ -61,7 +61,9 @@ for (let number = 1; number <=totalPages; number++) {
             {currentArticles.map(user=>(
                 <li key={user.id} className="post-card">
                 <strong className="post-title">{user.title}</strong>
-                <p className="post-body" style={{maxHeight:"200px",overflow:'hidden'}}>{user.body}</p>
+                <p className="post-body" style={{ maxHeight: "200px", overflow: "hidden" }}>
+  {user.body.split(" ").slice(0,30).join(" ")}...
+</p>
                 <Link to={`/article/${user.id}`} class="myBtn btn-pulse" style={{textDecoration:'none'}}>Lire le suit</Link>
 
                 </li>

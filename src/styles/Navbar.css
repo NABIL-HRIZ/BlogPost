@@ -89,3 +89,15 @@
   color: #fff;
 }
      
+@media (max-width: 768px) {
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    margin: 0 150px;          
+    gap: 20px;
+  }
+  
+  .wrapper {
+    margin-left:-50px;
+  }
+}

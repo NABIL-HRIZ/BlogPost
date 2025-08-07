@@ -4,7 +4,7 @@
   color:rgb(107, 107, 197);
   font-size:40px;
   font-weight:600;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .post-list {
@@ -79,4 +79,37 @@
 .loading h1{
     font-size: 40px;
     font-weight: 300;
+}
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .post-list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px !important;
+  }
+
+  .post-card {
+    padding: 15px;
+    font-size: 0.95rem;
+    height:200px;
+  }
+
+  .post-title {
+    font-size: 1.1rem;
+  }
+
+  .post-body {
+    font-size:15px;
+    margin-bottom: 20px;
+  }
+
+  .myBtn {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+  }
 }

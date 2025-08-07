@@ -22,7 +22,7 @@ const AjouterArticle = () => {
    
     const handleSubmit=async (e)=>{
          e.preventDefault()
-        const article={title,body}
+        const article={title,body,tags}
 
    
      try{

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../styles/Footer.css'
 const Footer = () => {
   return (
     <div className='p-5 bg-dark'>
