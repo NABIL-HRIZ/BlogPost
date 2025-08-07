@@ -25,7 +25,7 @@ const MyNavbar = () => {
 
         <ul className="wrapper">
           <li className="icon facebook"><span className="tooltip">Facebook</span><i className="fab fa-facebook-f"></i></li>
-          <li className="icon twitter"><span className="tooltip">Twitter</span><i className="fab fa-twitter"></i></li>
+          <li className="icon tiktok"><span className="tooltip">TikTok</span><i class="fa-brands fa-tiktok"></i></li>
           <li className="icon instagram"><span className="tooltip">Instagram</span><i className="fab fa-instagram"></i></li>
         </ul>
       </div>

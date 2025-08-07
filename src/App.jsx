@@ -8,6 +8,7 @@ import AjouterArticle from "./componants/AjouterArticle";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import TrueFocus from "./componants/TrueFocus";
+import BlurText from "./componants/BlurText";
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(() => {
@@ -35,7 +36,7 @@ const App = () => {
           borderColor="#6588d3"
           animationDuration={2}
           pauseBetweenAnimations={1}
-          title="Welcome to My Blog"
+          title={<BlurText />}
         />
       </div>
     );

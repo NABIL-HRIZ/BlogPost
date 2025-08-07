@@ -18,7 +18,7 @@ const ArticleList = () => {
     const fetchArticles = async () => {
       try {
         
-        const response = await fetch("https://dummyjson.com/posts?limit=20");
+        const response = await fetch("https://dummyjson.com/posts?limit=40");
         const data = await response.json();
         let allPosts = data.posts;
 

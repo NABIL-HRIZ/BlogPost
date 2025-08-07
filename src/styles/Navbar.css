@@ -75,10 +75,10 @@
   color: #fff;
 }
 
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-  background: #1da1f2;
+.wrapper .tiktok:hover,
+.wrapper .tiktok:hover .tooltip,
+.wrapper .tiktok:hover .tooltip::before {
+  background: #070707;
   color: #fff;
 }
 

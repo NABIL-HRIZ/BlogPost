@@ -7,6 +7,8 @@ const AjouterArticle = () => {
 
     const [title,setTitle]=useState('')
     const [body,setBody]=useState('')
+    const [tags,setTags]=useState('')
+
 
  const handleTitle=(e)=>{
         setTitle(e.target.value)
@@ -14,6 +16,10 @@ const AjouterArticle = () => {
     const handleBody=(e)=>{
         setBody(e.target.value)
     }
+     const handleTags=(e)=>{
+        setTags(e.target.value)
+    }
+   
     const handleSubmit=async (e)=>{
          e.preventDefault()
         const article={title,body}
@@ -31,9 +37,16 @@ const AjouterArticle = () => {
         const data = await response.json()
 
         const finalArticle = {
-        ...data,
+          ...data,
+        id:Date.now(),
       title,
       body,
+     tags: tags.split(',').map(tag => tag.trim()).filter(tag => tag !== ''),
+  reactions: {
+    likes: 0,
+    dislikes: 0,
+  },
+  views: 0,
     };
          const stored = JSON.parse(localStorage.getItem('articles')) || [];
   stored.unshift(finalArticle);
@@ -41,6 +54,7 @@ const AjouterArticle = () => {
         alert('Article bien ajouté')
         setTitle('')
         setBody('')
+        setTags('')
      }
      catch(error){
         console.error("something wrong",error)
@@ -68,6 +82,18 @@ const AjouterArticle = () => {
         required
         value={title}
         onChange={handleTitle}
+      />
+    </Form.Group>
+
+    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      <Form.Label className="fw-bold">Les Tags  de l'article</Form.Label>
+      <Form.Control 
+        type="text" 
+        placeholder="Les Tags  : sport,heath,fun " 
+        className="border-primary"
+        required
+        value={tags}
+        onChange={handleTags}
       />
     </Form.Group>
 
