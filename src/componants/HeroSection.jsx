@@ -27,7 +27,7 @@ const HeroSection = () => {
         <div className="hero-features">
           <div className="hero-feature">
             <span>⚡</span>
-            <span>Performance optimisée</span>
+            <span>Perform optimisée</span>
           </div>
           <div className="hero-feature">
             <span>📱</span>

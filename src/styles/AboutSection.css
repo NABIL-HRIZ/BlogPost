@@ -20,6 +20,19 @@
 }
 
 @media (max-width:768px) {
+  .fade-in{
+    text-align: center;
+  }
+  .lead{
+    text-align: center;
+  }
+  .custom-card{
+    text-align: center;
+  }
+  .card-body ul{
+    text-align: start;
+    margin-left: 100px;
+  }
   .h2{
     font-size:25px !important;
   }
